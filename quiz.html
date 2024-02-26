@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .question {
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    .options {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    .option {
+        border: 1px solid #ccc;
+        padding: 10px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .option:hover {
+        background-color: lightgreen;
+    }
+    .selected {
+        background-color: lightgreen;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="question">Question 1: What is the capital of France?</div>
+    <div class="options">
+        <div class="option" onclick="selectAnswer(this)">A. Paris</div>
+        <div class="option" onclick="selectAnswer(this)">B. Rome</div>
+        <div class="option" onclick="selectAnswer(this)">C. London</div>
+        <div class="option" onclick="selectAnswer(this)">D. Madrid</div>
+    </div>
+</div>
+<script>
+    function selectAnswer(option) {
+        // Remove 'selected' class from all options
+        let options = document.querySelectorAll('.option');
+        options.forEach((opt) => {
+            opt.classList.remove('selected');
+        });
+
+        // Add 'selected' class to the clicked option
+        option.classList.add('selected');
+    }
+</script>
+</body>
+</html>
